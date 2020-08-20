@@ -1,4 +1,4 @@
-# What is BillioCar?
+# What is BillioCar™?
 This project is for absolute beginers who want to learn how to build a robotic car from zero. Throughout this project, you will learn about python coding, 3d printing, electronics and basic AI knowledge about object detection and self-driving. 
 
 # Learn and Play!
