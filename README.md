@@ -1,7 +1,9 @@
-![](http://res.makeronsite.com/billiocar/bcar_overview.png)
+![](http://res.makeronsite.com/billiocar/bcar_logo_200.png)
 
 # What is BillioCar™?
 This project is for absolute beginers who want to learn how to build a robotic car from zero. Throughout this project, you will study Nvidia Jetson Nano and learn about python coding, Jupyter notebook, 3d printing, electronics and basic AI knowledge about object detection and self-driving. 
+
+![](http://res.makeronsite.com/billiocar/bcar_overview.png)
 
 ## Build, Play and Learn AI!
 We are entering the age of artificial intelligence. AI is gradually changing every aspect of our living. Let's learn how it really work through this project, BillioCar, to build your own robotic car, step by step.
