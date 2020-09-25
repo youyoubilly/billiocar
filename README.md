@@ -1,4 +1,4 @@
-![](http://res.makeronsite.com/billiocar/billiocar_overview.png)
+![](http://res.makeronsite.com/billiocar/bcar_overview.png)
 
 # What is BillioCar™?
 This project is for absolute beginers who want to learn how to build a robotic car from zero. Throughout this project, you will study Nvidia Jetson Nano and learn about python coding, Jupyter notebook, 3d printing, electronics and basic AI knowledge about object detection and self-driving. 
@@ -10,9 +10,9 @@ This project aims to be designed friendly for absolute beginers, at the same tim
 
 ## Quick Guide
 #### Controlling the car through widgets in Jupyter Notebook ####
-![](http://res.makeronsite.com/billiocar/movement_jupyter.gif)
+![](http://res.makeronsite.com/billiocar/move_jupyter.gif)
 #### Or you can control it by PS4 Joystick ####
-![](http://res.makeronsite.com/billiocar/movement_joystick.gif)
+![](http://res.makeronsite.com/billiocar/move_js.gif)
 #### It can do object detection whatever you have trained it to detect ####
 ![](http://res.makeronsite.com/billiocar/obj_det_pantilt.gif)
 #### It can also follow the object if you like ####
