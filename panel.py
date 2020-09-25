@@ -4,7 +4,7 @@ from ipywidgets import Button, HBox, VBox
 class NineButton():
     def __init__(self, button_list=None):
         self.button_layout = widgets.Layout(width='100px', height='80px', align_self='center')
-        self.button_list = ['Forward', '▲', '', '◄', 'Stop', '►', 'Backward', '▼', ''] if button_list==None else button_list
+        self.button_list = ['Forward', '▲', 'Slide_L', '◄', 'Stop', '►', 'Backward', '▼', 'Slide_R'] if button_list==None else button_list
         self.buttons = [Button(description=i, layout=self.button_layout) for i in self.button_list]
         
     def display(self):

@@ -61,6 +61,26 @@ class Car():
             time.sleep(t)
             self.stop()
             
+    def slide_left(self, p=None, t=None):
+        p=self.act_pct if p==None else p
+        t=self.act_time if t==None else t
+        self.run(p,-p,-p,p)
+        if t== -1:
+            pass
+        else:
+            time.sleep(t)
+            self.stop()
+
+    def slide_right(self, p=None, t=None):
+        p=self.act_pct if p==None else p
+        t=self.act_time if t==None else t
+        self.run(-p,p,p,-p)
+        if t== -1:
+            pass
+        else:
+            time.sleep(t)
+            self.stop()
+            
     def drive(self, steer=0, gear=0):
         m_left = self._steer_val(val=steer)
         m_right = self._steer_val(val=-steer)
