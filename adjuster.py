@@ -1,5 +1,5 @@
-def adjust_axes(val, adjust_point=(1,1)):
-    x, y = adjust_point
+def adjust_axes(val, adj_x=1, adj_y=1):
+    x, y = adj_x, adj_y
     if x == 0:
         if val == 0:
             return 0
@@ -37,28 +37,28 @@ def adjust_axes(val, adjust_point=(1,1)):
             return (y-1)/(x-1)*val+(x-y)/(x-1)
 
     
-def steer_val(val, oy=1, ny=-1):
-    if oy == ny:
-        return oy
+def steer_val(val, center_y=1, peak_y=-1):
+    if center_y == peak_y:
+        return center_y
     else:
-        px = (1-oy)/(oy-ny)
+        px = (1-center_y)/(center_y-peak_y)
         if val <-1 or val >1:
             print("steer_val error")
             return None
         elif val < px and val > -1:
-            return oy+val*(oy-ny)
+            return center_y+val*(center_y-peak_y)
         elif val == -1:
             return -1
         else:
             return 1
         
-def steer2_val(val, k=0.1):
-    if val > k and val <=1:
+def steer2_val(val, adj_x=0.2, peak_y1=1, peak_y2=-1):
+    if val > adj_x and val <=1:
+        return peak_y1
+    elif val>=-adj_x and val <= adj_x:
         return 1
-    elif val>=-k and val <= k:
-        return 1
-    elif val<-k and val >=-1:
-        return -0.3
+    elif val<-adj_x and val >=-1:
+        return peak_y2
 
 def steer_trans1(axesX, axesY):
     if axesX == 0:
