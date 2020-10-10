@@ -36,7 +36,9 @@ def adjust_axes(val, adj_x=1, adj_y=1):
         if val > x and val <= 1:
             return (y-1)/(x-1)*val+(x-y)/(x-1)
 
-    
+def adjust_steer(val, center_y=1, peak_y=-1):
+    return steer_val(val, center_y, peak_y), steer_val(-val, center_y, peak_y)
+
 def steer_val(val, center_y=1, peak_y=-1):
     if center_y == peak_y:
         return center_y

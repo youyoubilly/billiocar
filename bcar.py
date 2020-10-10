@@ -4,7 +4,7 @@ import ipywidgets.widgets as widgets
 from ipywidgets import HBox, VBox
 import time
 
-class BasicCar():
+class BCar():
     def __init__(self):
         self.car = Car()
         self.panel = NineButton()
@@ -34,7 +34,10 @@ class BasicCar():
 
     def _car_axes_fb(self, change):
         self.m_gear = - change['new']
-        self.car.drive(steer=self.m_steer, gear=self.m_gear)
+        if abs(self.m_gear) > 0.1:
+            self.car.drive(steer=self.m_steer, gear=self.m_gear)
+        else:
+            self.car.drive(steer=0, gear=0)
         
     def _slide_left(self, change):
         val = change['new']
@@ -84,7 +87,3 @@ class BasicCar():
             elif event == "right":
                 self.car.right()
             self.press_count = 0
-        
-class OmniCar():
-    def __init__(self):
-        pass
