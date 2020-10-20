@@ -1,20 +1,3 @@
-class AdafruitFeatherwing():  
-    def __init__(self):
-        from adafruit_motorkit import MotorKit
-        self.kit = MotorKit()
-        
-    def m1_act(self, val=0):
-        self.kit.motor1.throttle = -val
-
-    def m2_act(self, val=0):
-        self.kit.motor2.throttle = -val
-        
-    def m3_act(self, val=0):
-        self.kit.motor3.throttle = val
-        
-    def m4_act(self, val=0):
-        self.kit.motor4.throttle = val
-
 class PCA9685():  
     def __init__(self, bus=1):
         import Adafruit_PCA9685
@@ -23,15 +6,20 @@ class PCA9685():
         self.pwm.set_pwm_freq(50)
         #Signal and EnA by PWM, setting for each motor
         #Wiring for the BcarBoard
-        self.m1_sig, self.m1_in1, self.m1_in2 = 0, 2, 1
-        self.m2_sig, self.m2_in1, self.m2_in2 = 5, 3, 4
-        self.m3_sig, self.m3_in1, self.m3_in2 = 6, 8, 7
-        self.m4_sig, self.m4_in1, self.m4_in2 = 11, 9, 10
+#         self.m1_sig, self.m1_in1, self.m1_in2 = 0, 2, 1
+#         self.m2_sig, self.m2_in1, self.m2_in2 = 5, 3, 4
+#         self.m3_sig, self.m3_in1, self.m3_in2 = 6, 8, 7
+#         self.m4_sig, self.m4_in1, self.m4_in2 = 11, 9, 10
         #Wiring for DIY
 #         self.m1_sig, self.m1_in1, self.m1_in2 = 0, 4, 5
 #         self.m2_sig, self.m2_in1, self.m2_in2 = 1, 6, 7
 #         self.m3_sig, self.m3_in1, self.m3_in2 = 2, 8, 9
 #         self.m4_sig, self.m4_in1, self.m4_in2 = 3, 10, 11
+        #Other
+        self.m3_sig, self.m3_in1, self.m3_in2 = 0, 2, 1
+        self.m1_sig, self.m1_in1, self.m1_in2 = 5, 3, 4
+        self.m2_sig, self.m2_in1, self.m2_in2 = 6, 8, 7
+        self.m4_sig, self.m4_in1, self.m4_in2 = 11, 9, 10
         self.HIGH = 4095
 
     def motor_act(self, sig, in1, in2, val=0):
@@ -122,3 +110,20 @@ class PCA9685_Plus_GPIO():
     def shutdown():
         self.stop()
         GPIO.cleanup()
+        
+class AdafruitFeatherwing():  
+    def __init__(self):
+        from adafruit_motorkit import MotorKit
+        self.kit = MotorKit()
+        
+    def m1_act(self, val=0):
+        self.kit.motor1.throttle = -val
+
+    def m2_act(self, val=0):
+        self.kit.motor2.throttle = -val
+        
+    def m3_act(self, val=0):
+        self.kit.motor3.throttle = val
+        
+    def m4_act(self, val=0):
+        self.kit.motor4.throttle = val
