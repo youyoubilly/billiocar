@@ -55,7 +55,7 @@ class SPItoWS():
             self.X = self.X + "100100100100100100100100100100100100100100100100100100100100100100100100"
         self.LED_show()
 
-class LED():
+class WS2812():
     def __init__(self, led_count = 8):
         self.ledc = led_count
         self.sig = SPItoWS(self.ledc)
@@ -129,10 +129,10 @@ class LED():
                 time.sleep(inr)
         self.all_off()
 
-class LED_Ctrl():
+class WS2812_Ctrl():
     def __init__(self):
         self.panel = ButtonGroup()
-        self.led = LED()
+        self.led = WS2812()
         self.tmp1 = 0
         self.tmp2 = 0
         self.press_count = 0
@@ -197,7 +197,7 @@ class LED_Ctrl():
 class ButtonGroup():
     def __init__(self, button_list=None):
         self.button_layout = widgets.Layout(width='60px', height='40px')
-        self.button_list = ['LED', 'Col', 'Pol'] if button_list==None else button_list
+        self.button_list = ['HL', '◐', '♮'] if button_list==None else button_list
         self.buttons = [Button(description=i, layout=self.button_layout) for i in self.button_list]
         
     def display(self):

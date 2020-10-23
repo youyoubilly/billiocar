@@ -102,7 +102,7 @@ class ButtonGroup():
     def __init__(self, button_list=None):
         self.button_layout = widgets.Layout(width='60px', height='40px', align_self='center')
         self.button_list = ['Fwd', '▲', 'sL', '◄', 'Stop', '►', 'Bwd', '▼', 'sR'] if button_list==None else button_list
-        self.extra_list = ['UP_lv', '-', 'DOWN_lv']
+        self.extra_list = ['g△', '-', 'g▽']
         self.buttons = [Button(description=i, layout=self.button_layout) for i in self.button_list]
         self.extra = [Button(description=i, layout=self.button_layout) for i in self.extra_list]
         
