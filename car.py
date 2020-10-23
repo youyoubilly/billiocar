@@ -44,20 +44,20 @@ class Car():
             time.sleep(t)
             self.stop()
 
-    def right(self, p=None, t=None):
+    def left(self, p=None, t=None):
         p=self.act_pct if p==None else p
         t=self.act_time if t==None else t
-        self.run(p,-p,p,-p)
+        self.run(-p,p,-p,p)
         if t== -1:
             pass
         else:
             time.sleep(t)
             self.stop()
-
-    def left(self, p=None, t=None):
+            
+    def right(self, p=None, t=None):
         p=self.act_pct if p==None else p
         t=self.act_time if t==None else t
-        self.run(-p,p,-p,p)
+        self.run(p,-p,p,-p)
         if t== -1:
             pass
         else:
@@ -102,5 +102,5 @@ class Car():
         print(self.gear_lv)
             
     def drive(self, steer=0, gear=0):
-        m_left, m_right = adjust_steer(val=adjust_axes(val=steer, adj_x=0.9, adj_y=0.6), center_y=0.8, peak_y=-0.7)
+        m_left, m_right = adjust_steer(val=adjust_axes(val=steer, adj_x=0.9, adj_y=0.6), center_y=1, peak_y=-1)
         self.run(m_left*gear*self.gear_lv, m_right*gear*self.gear_lv, m_left*gear*self.gear_lv, m_right*gear*self.gear_lv)

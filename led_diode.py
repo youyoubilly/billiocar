@@ -13,6 +13,7 @@ class Led_Diode():
         self.unit = 0.2
         self.panel = ButtonGroup()
         self.tmp = 0
+        self.press_count = 0
 
     def on(self, pct=1):
         self.tmp = 1
@@ -59,6 +60,21 @@ class Led_Diode():
         self.panel.buttons[0].on_click(lambda x: self.on_off())
         self.panel.buttons[1].on_click(lambda x: self.light_up())
         self.panel.buttons[2].on_click(lambda x: self.light_down())
+        
+    def controller_setup(self, index=0):
+        self.controller = widgets.Controller(index=index)
+        print("Move your controller NOW and activiate it...")
+        display(self.controller)
+                
+    def controller_on(self): # Linking js to led control
+        self.controller.buttons[8].observe(lambda x: self._press_act(event="on_off"))
+        
+    def _press_act(self, event):
+        self.press_count += 1
+        if self.press_count > 7:
+            if event == "on_off":
+                self.on_off()
+            self.press_count = 0
         
 class ButtonGroup():
     def __init__(self, button_list=None):

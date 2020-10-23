@@ -28,21 +28,19 @@ class BCar():
         
     def _slide_left(self, change):
         val = change['new']
-        pct = 0.6
-        if self.controller.buttons[5].value == 0:
-            if val == 1:
-                self.car.run(m1=pct, m2=-pct, m3=-pct, m4=pct)
-            if val == 0:
-                self.car.run(m1=0, m2=0, m3=0, m4=0)
+        pct = 0.5
+        if self.controller.buttons[10].value == 1:
+            self.car.run(m1=-pct, m2=pct, m3=-pct, m4=pct)
+        else:
+            self.car.run(m1=0, m2=0, m3=0, m4=0)
     
     def _slide_right(self, change):
         val = change['new']
-        pct = 0.6
-        if self.controller.buttons[4].value == 0:
-            if val == 1:
-                self.car.run(m1=-pct, m2=pct, m3=pct, m4=-pct)
-            if val == 0:
-                self.car.run(m1=0, m2=0, m3=0, m4=0)
+        pct = 0.5
+        if self.controller.buttons[11].value == 1:
+            self.car.run(m1=pct, m2=-pct, m3=pct, m4=-pct)
+        else:
+            self.car.run(m1=0, m2=0, m3=0, m4=0)
             
     def controller_setup(self, index=0):
         self.controller = widgets.Controller(index=index)
